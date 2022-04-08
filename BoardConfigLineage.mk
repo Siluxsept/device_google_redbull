@@ -15,6 +15,8 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_CONFIG := redbull_defconfig
 TARGET_NEEDS_DTBOIMAGE := true
+# Use Gnu AS until we can switch to LLVM_IAS=1
+KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/gas/$(HOST_PREBUILT_TAG)
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
 
 # Kernel modules
@@ -29,7 +31,7 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(filter $(BOOT_KERNEL_MODULES), $(K
 
 # Manifests
 DEVICE_MANIFEST_FILE += device/google/redbull/lineage_manifest.xml
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += vendor/lineage/config/device_framework_matrix.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += vendor/aicp/config/device_framework_matrix.xml
 
 # Partitions
 AB_OTA_PARTITIONS += \
