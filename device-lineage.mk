@@ -35,13 +35,6 @@ WITH_GMS := true
 # Google Assistant
 PRODUCT_PRODUCT_PROPERTIES += ro.opa.eligible_device=true
 
-# IH8SN
-PRODUCT_PACKAGES += \
-    ih8sn
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/ih8sn.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/ih8sn.conf
-
 # Init
 PRODUCT_PACKAGES += \
     libinit_redbull
